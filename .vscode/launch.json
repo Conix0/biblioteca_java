@@ -1,0 +1,61 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+
+        {
+            "type": "java",
+            "name": "visual",
+            "request": "launch",
+            "mainClass": "com.biblioteca.VisualG.visual",
+            "projectName": "TPpardigmas_992a2171",
+            "classPaths": [
+                "${workspaceFolder}/lib/sqlite-jdbc-3.47.0.0.jar"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.biblioteca.VisualG.Main",
+            "projectName": "TPpardigmas_992a2171",
+            "classPaths": [
+                 "${workspaceFolder}/lib/sqlite-jdbc-3.47.0.0.jar"
+               
+            ]
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "conexion.Main",
+            "projectName": "TPpardigmas_992a2171"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "enlace",
+            "request": "launch",
+            "mainClass": "conexion.enlace",
+            "projectName": "TPpardigmas_992a2171",
+            "classPaths": [
+                "${workspaceFolder}/lib/sqlite-jdbc-3.47.0.0.jar"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "visual",
+            "request": "launch",
+            "mainClass": "visual",
+            "projectName": "TPpardigmas_992a2171"
+        }
+    ]
+}
