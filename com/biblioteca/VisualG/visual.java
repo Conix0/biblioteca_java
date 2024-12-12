@@ -3,7 +3,7 @@ package com.biblioteca.VisualG;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-import com.biblioteca.Modelos.LibroDAO;
+import com.biblioteca.Modelos.LibroDTO;
 import com.biblioteca.controladores.LibroController;
 
 import java.awt.*;
@@ -64,9 +64,9 @@ public class visual extends JFrame {
     private void realizarBusqueda() {
         String textoBusqueda = txtBuscar.getText();
         modeloTabla.setRowCount(0);
-        List<LibroDAO> resultados = libroController.buscarPorTitulo(textoBusqueda);
+        List<LibroDTO> resultados = libroController.buscarPorTitulo(textoBusqueda);
 
-        for (LibroDAO libro : resultados) {
+        for (LibroDTO libro : resultados) {
             modeloTabla.addRow(new Object[]{libro.getId(), libro.getTitulo(), libro.getAutor(), libro.getAnio()});
         }
 
@@ -92,7 +92,7 @@ public class visual extends JFrame {
                 String titulo = txtTitulo.getText();
                 String autor = txtAutor.getText();
                 int anio = Integer.parseInt(txtAnio.getText());
-                libroController.agregarLibro(new LibroDAO(0, titulo, autor, anio));
+                libroController.agregarLibro(new LibroDTO(0, titulo, autor, anio));
                 JOptionPane.showMessageDialog(this, "Libro agregado.");
                 realizarBusqueda(); 
             } catch (Exception e) {

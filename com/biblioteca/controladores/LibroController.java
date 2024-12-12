@@ -7,14 +7,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.biblioteca.Modelos.LibroDAO;
+import com.biblioteca.Modelos.LibroDTO;
 import com.biblioteca.conexion.enlace;
 
 public class LibroController {
 
-public List<LibroDAO> buscarPorTitulo(String titulo) {
+public List<LibroDTO> buscarPorTitulo(String titulo) {
         String sql = "SELECT * FROM libros WHERE titulo LIKE ?";
-        List<LibroDAO> listaLibros = new ArrayList<>();
+        List<LibroDTO> listaLibros = new ArrayList<>();
 
         try (Connection conn = enlace.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -23,7 +23,7 @@ public List<LibroDAO> buscarPorTitulo(String titulo) {
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                listaLibros.add(new LibroDAO(
+                listaLibros.add(new LibroDTO(
                         rs.getInt("id"),
                         rs.getString("titulo"),
                         rs.getString("autor"),
@@ -37,7 +37,7 @@ public List<LibroDAO> buscarPorTitulo(String titulo) {
         }
 
 
-    public void agregarLibro(LibroDAO libro) {
+    public void agregarLibro(LibroDTO libro) {
         String sql = "INSERT INTO libros (titulo, autor, anio) VALUES (?, ?, ?)";
         try (Connection conn = enlace.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {

@@ -1,12 +1,12 @@
 package com.biblioteca.Modelos;
 
-public class LibroDAO {
+public class LibroDTO {
     private int id;
     private String titulo;
     private String autor;
     private int anio;
 
-    public LibroDAO(int id, String titulo, String autor, int anio) {
+    public LibroDTO(int id, String titulo, String autor, int anio) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
